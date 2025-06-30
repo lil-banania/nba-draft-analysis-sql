@@ -1,1 +1,1 @@
-# nba-draft-analysis-sql
+# NBA Draft ROI Analysis - SQL Portfolio Project
