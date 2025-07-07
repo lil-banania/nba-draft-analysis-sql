@@ -6,4 +6,7 @@ CREATE INDEX IF NOT EXISTS idx_prospects_grade ON nba_prospects_import(scout_gra
 -- indexes for analyzes
 CREATE INDEX IF NOT EXISTS idx_prospects_pos_rank ON nba_prospects_import(position, final_rank);
 CREATE INDEX IF NOT EXISTS idx_prospects_age_potential ON nba_prospects_import(age, final_gen_probability DESC);
-CREATE INDEX IF NOT EXISTS idx_prospects_stats ON nba_prospects_import(ppg, rpg, apg) WHERE ppg IS NOT NULL;		   
+CREATE INDEX IF NOT EXISTS idx_prospects_stats ON nba_prospects_import(ppg, rpg, apg) WHERE ppg IS NOT NULL;	
+
+ANALYZE nba_prospects;
+ANALYZE prospect_metrics;
