@@ -10,8 +10,8 @@ with position_stats as (
         avg(ppg) as avg_scoring,
         avg(age) as avg_age,
         -- Grade distribution
-        count(*) FILTER (where scout_grade in ('A+', 'A', 'A-')) as elite_grades,
-        count(*) FILTER (where final_gen_probability > 0.7) as high_potential_count
+        count(*) filter (where scout_grade in ('A+', 'A', 'A-')) as elite_grades,
+        count(*) filter (where final_gen_probability > 0.7) as high_potential_count
     from nba_prospects_import
     where position is not null
     group by position
