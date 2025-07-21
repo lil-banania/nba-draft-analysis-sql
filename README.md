@@ -61,6 +61,7 @@ sql-- Start with exploratory analysis
 \i sql/02_scouting/scout_vs_ai.sql
 \i sql/03_predictive/age_impact_analysis.sql
 \i sql/04_business/value_curve_analysis.sql
+```sql
 
 
 📈 Key Analyses
