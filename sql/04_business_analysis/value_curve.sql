@@ -28,7 +28,7 @@ with draft_tiers as (
             else 7
         end as tier_number
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where final_rank is not null  
       and final_gen_probability is not null
 ),
