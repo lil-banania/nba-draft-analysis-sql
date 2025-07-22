@@ -8,7 +8,7 @@
     round(avg(apg), 2) as average_apg,
     round(avg(rpg), 2) as average_rpg,
     round(avg(final_gen_probability), 2) as average_general
-from nba_prospects_import
+from nba_prospects_2025
 where ppg IS NOT NULL
   and apg IS NOT NULL
   and rpg IS NOT NULL
