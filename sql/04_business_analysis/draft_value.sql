@@ -1,10 +1,5 @@
--- ==========================================
--- draft value by tiers - simple
--- ==========================================
--- objectif: voir la "valeur" par tranche de draft
--- question: y a-t-il une chute de qualité après pick 15 ?
--- méthode: moyenne par tranche + comparaison
--- ==========================================
+
+-- goal : determine the value of a draft pick
 
 with draft_tiers as (
     select 
@@ -19,7 +14,7 @@ with draft_tiers as (
             else 'second round (31+)'
         end as draft_tier
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where final_rank is not null
 )
 select 
@@ -29,7 +24,7 @@ select
     round(min(final_gen_probability), 3) as worst_in_tier,
     round(max(final_gen_probability), 3) as best_in_tier,
     
-    -- assessment simple
+    -- simple assessment 
     case 
         when avg(final_gen_probability) > 0.7 then 'high value tier'
         when avg(final_gen_probability) > 0.5 then 'medium value tier'
