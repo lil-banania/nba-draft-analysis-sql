@@ -13,7 +13,7 @@ with base_value as (
         -- basic value score calculation 
         round((final_gen_probability * 100 / nullif(final_rank, 0)), 2) as basic_value_score
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where final_rank is not null 
       and final_gen_probability is not null
       and final_rank > 5  
