@@ -1,10 +1,4 @@
--- ==========================================
--- college pipeline analysis
--- ==========================================
--- objectif: quelles universités produisent le plus de talent ?
--- question: duke/kentucky valent-ils leur réputation ?
--- méthode: moyenne par université + comptage
--- ==========================================
+-- Goal : determine which college is send more players in NBA 
 
 with college_analysis as (
     select 
@@ -15,10 +9,10 @@ with college_analysis as (
         round(avg(ppg), 1) as avg_production,
         string_agg(name, ', ' order by final_gen_probability desc) as prospects_list
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where college is not null
     group by college
-    having count(*) >= 2  -- au moins 2 prospects
+    having count(*) >= 2  -- at least 2
 )
 select 
     college,
