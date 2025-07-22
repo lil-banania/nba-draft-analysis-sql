@@ -20,7 +20,7 @@ with grade_performance as (
             else 10
         end as grade_order
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where scout_grade is not null
     group by scout_grade
 ),
