@@ -12,7 +12,7 @@ with position_stats as (
         -- Grade distribution
         count(*) filter (where scout_grade in ('A+', 'A', 'A-')) as elite_grades,
         count(*) filter (where final_gen_probability > 0.7) as high_potential_count
-    from nba_prospects_import
+    from nba_prospects_2025
     where position is not null
     group by position
 )
