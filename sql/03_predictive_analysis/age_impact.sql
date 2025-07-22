@@ -11,7 +11,7 @@ with age_groups as (
             when age < 21.5 then 'average'
             else 'old'
         end as age_category
-    from nba_prospects_import
+    from nba_prospects_2025
     where age is not null
 )
 select 
