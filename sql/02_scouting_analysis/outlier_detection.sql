@@ -12,7 +12,7 @@ WITH  value_calculation as (
         case when three_pt_pct > 0.35 then 1.15 else 1.0 end  as shooting_bonus,
         case when ppg > 15 then 1.1  else 1.0 end as scoring_bonus
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where final_rank is not null and final_gen_probability is not null
 ),
 adjusted_value as (
