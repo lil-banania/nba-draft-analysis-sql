@@ -18,7 +18,7 @@ with scout_analysis as (
         
         avg(final_gen_probability) * 4 as ai_numeric
         
-    from nba_prospects_import
+    from nba_prospects_2025
     where scout_grade is not null and final_gen_probability is not null
     group by scout_grade
 )
