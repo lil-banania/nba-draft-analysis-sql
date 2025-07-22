@@ -7,7 +7,7 @@ WITH age_performance AS (
         round(AVG(final_gen_probability), 3) as avg_potential,
         round(AVG(ppg), 1) as avg_production,
         string_agg(name, ', ' order by final_gen_probability desc) as prospect_names
-    from nba_prospects_import
+    from nba_prospects_2025
     where age IS NOT NULL 
       and final_gen_probability IS NOT NULL 
       and position IS NOT NULL
